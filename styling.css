@@ -1,6 +1,9 @@
 body {
     /* background-color: rgb(17, 0, 58); */
     background-image: url("purple_bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;   
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     color: rgb(225, 203, 255);
