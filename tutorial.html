@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Basics</title>
+        <link rel="stylesheet" href="styling.css">
+    </head>
+
+    <body>
+        <h1>The Basics</h1>
+
+        <p>Hi, welcome back.</p>
+
+        <p>There are a few things you should know about this website.</p>
+
+        <br>
+
+        <h3>"Fake Free Funds"? What the hell?</h3>
+        <p>Ignore the unnecessarily alliterative name for now. Fake Free Funds, or FFF, is the <b>main currency</b> used on the website.<br>
+            Every hour, you're allowed to press the "Mine" button, and after an hour, you will have earned 1 FFF.<br>
+            You must manually come back to collect your FFF, and to restart the timer.
+        </p>
+
+        <br>
+
+        <h3>Automation Limit</h3>
+        <p>Once you've earned enough FFF (10 to start with), you can spend it on increasing your <b>automation limit (AL)</b>.<br>
+            This limit increases how much FFF is automatically mined, but 
+            <span style="color:rgb(255, 169, 169)">you must watch a 30-second advert to start the automation.</span>
+        </p>
+        <p>For example, when you first start, your AL is 1. This means <b>every hour you have to check back</b> on the website to claim your FFF.<br>
+            But once you spend 10 FFF on upgrading your AL, you only have to check back <b>once every 2 hours</b>.<br>
+            You can still check back at any amount of hours you wish, but to restart the automation you will have to watch another advert.<br>
+            <span style="color:rgb(152, 228, 137)">The amount of automated collections will be visible in the top left (eventually).</span>
+        </p>
+
+        <br>
+
+        <h3>AL Pricing Formula</h3>
+        <p>The price of your next AL is as follows (where n is your current AL):<br>
+            <b><i>cost of next upgrade = floor(10(n^1.1))</i></b><br>
+            For example, if n = 3:<br>
+            <i>cost of next upgrade = floor(10(n^1.1)) = floor(10(<b>3</b>^1.1)) = floor(10(<b>3.3484</b>)) = floor(<b>33.484</b>) = 33</i><br>
+            Therefore the cost of the next upgrade is 33.
+        </p>
+    </body>
+</html>

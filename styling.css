@@ -1,15 +1,10 @@
 body {
-    background-color: rgb(41, 0, 138);
+    background-color: rgb(31, 0, 102);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: rgb(229, 220, 255);
+    text-align: center;
+    color: rgb(225, 203, 255);
 }
 
-.title {
-    text-align: center;
-}
-
-.p {
-    text-align: center;
-    /* padding-left: 10%;
-    padding-right: 10%; */
+p {
+    padding: 10px;
 }
