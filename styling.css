@@ -2,7 +2,7 @@ body {
     /* background-color: rgb(17, 0, 58); */
     background-image: url("purple_bg.png");
     background-size: cover;
-    background-repeat: repeat-y;
+    background-repeat: repeat;
     background-position: center center;   
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
