@@ -1,5 +1,6 @@
 body {
-    background-color: rgb(31, 0, 102);
+    /* background-color: rgb(17, 0, 58); */
+    background-image: url("purple_bg.png");
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     color: rgb(225, 203, 255);
@@ -7,4 +8,42 @@ body {
 
 p {
     padding: 10px;
+}
+
+.button {
+    background-color: rgb(68, 0, 156);
+    border: none;
+    color: rgb(225, 203, 255);
+    padding: 15px 32px;
+    border: 3px solid rgb(50, 0, 97);
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 4px 2px;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: rgb(99, 0, 228);
+}
+
+.fffbutton {
+    background-color: rgb(131, 42, 255);
+    color: rgb(214, 185, 255);
+    padding: 15px 32px;
+    border: 3px solid rgb(50, 0, 97);
+    border-radius: 8px;
+    display: inline-block;
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+.fffbutton:hover {
+    background-color: rgb(153, 95, 235);
 }
