@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(41, 0, 138);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10%;
+}
+
+.title {
+    text-align: center;
+}
+
+.p {
+    text-align: center;
+    padding: 50%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
