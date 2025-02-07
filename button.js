@@ -9,7 +9,7 @@ function mine() {
     const currentALStrIndex = currentALText.innerHTML.indexOf(":")
     var currentAL = Number(currentALText.innerHTML.substring(currentALStrIndex+2))
     
-    fff = Math.round((fff+(0.1*currentAL))*10)/10
+    fff = Math.round((fff+(1*currentAL))*10)/10
     fffText.innerHTML = fff + " FFF"
 }
   
