@@ -1,5 +1,5 @@
 body {
-    /* background-color: rgb(17, 0, 58); */
+    background-color: rgb(21, 0, 71); /* before the image loads, make it something similar */
     background-image: url("purple_bg.png");
     background-size: cover;
     background-repeat: repeat;
