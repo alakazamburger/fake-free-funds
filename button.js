@@ -48,7 +48,7 @@ function mine() {
     startTime = Date.now()
     timerActive = true
     
-    var timeToWait = 60 // in seconds
+    var timeToWait = 10 // in seconds
     var seconds = Math.floor((Date.now() - startTime) / 1000)
     
     secondWait = setInterval(function() {
