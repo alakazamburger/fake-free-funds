@@ -18,6 +18,25 @@ function formatTime(s) {
     return [s, m, h]
 }
 
+function everySecond(seconds, timeToWait) {
+    if (seconds >= timeToWait) {
+      console.log("time's up!")
+      clearInterval(secondWait)
+      timerActive = false
+    }
+    
+    var timeUnitArr = formatTime(3600-seconds)
+    var sec = timeUnitArr[0]
+    var min = timeUnitArr[1]
+    var hr = timeUnitArr[2]
+    sec <= 10 && (sec = `0${sec.toString()}`)
+    min <= 10 && (min = `0${min.toString()}`)
+    hr <= 10 && (hr = `0${hr.toString()}`)
+    var formattedTime = `${hr}:${min}:${sec}`
+    document.getElementById("timeLeft").innerHTML = formattedTime
+    // console.log(formattedTime)
+  }
+
 function mine() {
     // current time
     const dateText = document.getElementById("timeLeft")
@@ -32,26 +51,8 @@ function mine() {
     var timeToWait = 10
     var seconds = Math.floor((Date.now() - startTime) / 1000)
     
-    var secondWait = setInterval(everySecond(), 1000)
-  
-    function everySecond() {
-        if (seconds >= timeToWait) {
-            console.log("time's up!")
-            clearInterval(secondWait)
-            timerActive = false
-        }
+    var secondWait = setInterval(everySecond(seconds, timeToWait), 1000)
     
-        var timeUnitArr = formatTime(timeToWait-seconds)
-        var sec = timeUnitArr[0]
-        var min = timeUnitArr[1]
-        var hr = timeUnitArr[2]
-        sec < 10 && (sec = `0${sec.toString()}`)
-        min < 10 && (min = `0${min.toString()}`)
-        hr < 10 && (hr = `0${hr.toString()}`)
-        var formattedTime = `${hr}:${min}:${sec}`
-        dateText.innerHTML = formattedTime
-    }
-  
     ////////////////////////////////////////////////////////////////////////////////////////
   
     // current FFF
