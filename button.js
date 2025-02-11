@@ -25,8 +25,8 @@ function mine() {
     if (timerActive == false) {
         startTime = Date.now()
         timerActive = true
-    } else if (timerActive == true) {
-        return
+    // } else if (timerActive == true) {
+    //     return
     }
     
     var timeToWait = 10
@@ -45,9 +45,9 @@ function mine() {
         var sec = timeUnitArr[0]
         var min = timeUnitArr[1]
         var hr = timeUnitArr[2]
-        sec <= 10 && (sec = `0${sec.toString()}`)
-        min <= 10 && (min = `0${min.toString()}`)
-        hr <= 10 && (hr = `0${hr.toString()}`)
+        sec < 10 && (sec = `0${sec.toString()}`)
+        min < 10 && (min = `0${min.toString()}`)
+        hr < 10 && (hr = `0${hr.toString()}`)
         var formattedTime = `${hr}:${min}:${sec}`
         dateText.innerHTML = formattedTime
     }
