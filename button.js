@@ -1,5 +1,6 @@
 var timerActive = false
 var startTime = 0
+let secondWait
 
 function formatTime(s) {
     var m = 0
@@ -20,38 +21,40 @@ function formatTime(s) {
 
 function everySecond(seconds, timeToWait) {
     if (seconds >= timeToWait) {
-      console.log("time's up!")
-      clearInterval(secondWait)
-      timerActive = false
+    // console.log("time's up!")
+        clearInterval(secondWait)
+        timerActive = false
     }
     
     var timeUnitArr = formatTime(timeToWait-seconds)
     var sec = timeUnitArr[0]
     var min = timeUnitArr[1]
     var hr = timeUnitArr[2]
-    sec <= 10 && (sec = `0${sec.toString()}`)
-    min <= 10 && (min = `0${min.toString()}`)
-    hr <= 10 && (hr = `0${hr.toString()}`)
+    sec < 10 && (sec = `0${sec.toString()}`)
+    min < 10 && (min = `0${min.toString()}`)
+    hr < 10 && (hr = `0${hr.toString()}`)
     var formattedTime = `${hr}:${min}:${sec}`
     document.getElementById("timeLeft").innerHTML = formattedTime
     // console.log(formattedTime)
-  }
+}
 
 function mine() {
+    // check if the timer is running
+    if (timerActive == true) return
+
     // current time
     const dateText = document.getElementById("timeLeft")
     
-    if (timerActive == false) {
-        startTime = Date.now()
-        timerActive = true
-    // } else if (timerActive == true) {
-    //     return
-    }
+    startTime = Date.now()
+    timerActive = true
     
-    var timeToWait = 10
+    var timeToWait = 60 // in seconds
     var seconds = Math.floor((Date.now() - startTime) / 1000)
     
-    var secondWait = setInterval(everySecond(seconds, timeToWait), 1000)
+    secondWait = setInterval(function() {
+        seconds++
+        everySecond(seconds, timeToWait)
+    }, 1000)
     
     ////////////////////////////////////////////////////////////////////////////////////////
   
@@ -68,7 +71,7 @@ function mine() {
     fff = Math.round((fff+(1*currentAL))*10)/10
     fffText.innerHTML = fff + " FFF"
 }
-  
+
 function alUpgrade() {
     // next AL price
     const alButton = document.getElementById("alButton")
