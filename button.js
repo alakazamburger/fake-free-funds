@@ -1,4 +1,59 @@
+var timerActive = false
+var startTime = 0
+
+function formatTime(s) {
+    var m = 0
+    var h = 0
+    
+    if (s >= 60) {
+        m = Math.floor(s/60)
+        s -= m*60
+    }
+    
+    if (m >= 60) {
+        h = Math.floor(m/60)
+        m -= h*60
+    }
+    
+    return [s, m, h]
+}
+
 function mine() {
+    // current time
+    const dateText = document.getElementById("timeLeft")
+    
+    if (timerActive == false) {
+        startTime = Date.now()
+        timerActive = true
+    } else if (timerActive == true) {
+        return
+    }
+    
+    var timeToWait = 10
+    var seconds = Math.floor((Date.now() - startTime) / 1000)
+    
+    var secondWait = setInterval(everySecond(), 1000)
+  
+    function everySecond() {
+        if (seconds >= timeToWait) {
+            console.log("time's up!")
+            clearInterval(secondWait)
+            timerActive = false
+        }
+    
+        var timeUnitArr = formatTime(3600-seconds)
+        var sec = timeUnitArr[0]
+        var min = timeUnitArr[1]
+        var hr = timeUnitArr[2]
+        sec <= 10 && (sec = `0${sec.toString()}`)
+        min <= 10 && (min = `0${min.toString()}`)
+        hr <= 10 && (hr = `0${hr.toString()}`)
+        var formattedTime = `${hr}:${min}:${sec}`
+        dateText.innerHTML = formattedTime
+    }
+  
+    ////////////////////////////////////////////////////////////////////////////////////////
+  
     // current FFF
     const mineButton = document.getElementById("fffbutton")
     const fffText = document.getElementById("fff")
