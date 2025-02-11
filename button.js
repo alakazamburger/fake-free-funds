@@ -41,7 +41,7 @@ function mine() {
             timerActive = false
         }
     
-        var timeUnitArr = formatTime(3600-seconds)
+        var timeUnitArr = formatTime(timeToWait-seconds)
         var sec = timeUnitArr[0]
         var min = timeUnitArr[1]
         var hr = timeUnitArr[2]
